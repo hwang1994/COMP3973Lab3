@@ -14,15 +14,18 @@ namespace Lab2.Controllers
 {
     public class FilesController : Controller
     {
-       private IHostingEnvironment _env;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public FilesController(IHostingEnvironment env)
+        public FilesController(IWebHostEnvironment webHostEnvironment)
         {
-            _env = env;   
+            _webHostEnvironment= webHostEnvironment;
         }
         public IActionResult Index()
         {
-            String path = _env.WebRootPath;
+            string webRootPath = _webHostEnvironment.WebRootPath;
+            string contentRootPath = _webHostEnvironment.ContentRootPath;
+
+            string path = Path.Combine(contentRootPath , "TextFiles");
             return Content(path);
 /*             string[] files = Directory.GetFiles("TextFiles"); //apprently this works
             ViewBag.Files = files;
