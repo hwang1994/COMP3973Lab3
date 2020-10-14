@@ -23,9 +23,10 @@ namespace Lab2.Controllers
 
         public IActionResult Index()
         {
-            string[] files = Directory.GetFiles("../../../TextFiles"); //apprently this works
-            ViewBag.Files = files;
-            return View();
+            return Content(Directory.GetCurrentDirectory());
+            //string[] files = Directory.GetFiles("../../../TextFiles"); //apprently this works
+            //ViewBag.Files = files;
+            //return View();
         }
 
         public IActionResult Content(int id)
