@@ -22,7 +22,7 @@ namespace Lab2.Controllers
         }
         public IActionResult Index()
         {
-            String path = _env.ContentRootPath;
+            String path = _env.WebRootPath;
             return Content(path);
 /*             string[] files = Directory.GetFiles("TextFiles"); //apprently this works
             ViewBag.Files = files;
