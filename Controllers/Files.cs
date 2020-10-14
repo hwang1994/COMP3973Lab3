@@ -26,10 +26,9 @@ namespace Lab2.Controllers
             string contentRootPath = _webHostEnvironment.ContentRootPath;
 
             string path = Path.Combine(contentRootPath , "TextFiles");
-            return Content(path);
-/*             string[] files = Directory.GetFiles("TextFiles"); //apprently this works
+            string[] files = Directory.GetFiles(path); //apprently this works
             ViewBag.Files = files;
-            return View(); */
+            return View();
         }
 
         public IActionResult Content(int id)
