@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "File Content";
+    String fileContent = ViewBag.lineData as String;
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+</div>
+
+<h5>@fileContent</h5>
