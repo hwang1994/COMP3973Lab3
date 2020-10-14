@@ -14,18 +14,19 @@ namespace Lab2.Controllers
 {
     public class FilesController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+       private IHostingEnvironment _env;
 
-        public FilesController(ILogger<HomeController> logger)
+        public FilesController(IHostingEnvironment env)
         {
-            _logger = logger;
+            _env = env;   
         }
-
         public IActionResult Index()
         {
-            string[] files = Directory.GetFiles("css");
+            String path = _env.ContentRootPath;
+            return Content(path);
+/*             string[] files = Directory.GetFiles("TextFiles"); //apprently this works
             ViewBag.Files = files;
-            return View();
+            return View(); */
         }
 
         public IActionResult Content(int id)
