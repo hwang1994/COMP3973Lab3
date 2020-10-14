@@ -23,7 +23,7 @@ namespace Lab2.Controllers
 
         public IActionResult Index()
         {
-            string[] files = Directory.GetFiles("~/TextFiles");
+            string[] files = Directory.GetFiles("TextFiles");
             ViewBag.Files = files;
             return View();
         }
