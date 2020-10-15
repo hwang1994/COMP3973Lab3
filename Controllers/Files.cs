@@ -23,14 +23,14 @@ namespace Lab2.Controllers
 
         public IActionResult Index()
         {
-            string[] files = Directory.GetFiles("wwwroot/TextFiles"); //apprently this works
+            string[] files = Directory.GetFiles("TextFiles"); //apprently this works
             ViewBag.Files = files;
             return View();
         }
 
         public IActionResult Content(int id)
         {
-            string[] files = Directory.GetFiles("wwwroot/TextFiles");
+            string[] files = Directory.GetFiles("TextFiles");
             string file = files[id];
             StreamReader streamReader = new StreamReader(file);
             ViewBag.lineData = streamReader.ReadLine();
