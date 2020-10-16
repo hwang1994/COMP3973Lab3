@@ -4,11 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   
-   <ItemGroup>
-    <Folder Include="Test\">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Folder>
-  </ItemGroup>
+<Target Name="CreateAppDataFolder" AfterTargets="AfterPublish">
+	<MakeDir Directories="$(PublishUrl)AppData" Condition="!Exists('$(PublishUrl)AppData')" />
+</Target>
 
 
 
