@@ -4,12 +4,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-<Target Name="BeforeBuild" AfterTargets="AfterPublish">
-    <ItemGroup>
-	<Content Include="Test\File.tt" />
-    </ItemGroup>
-</Target>
-
-
-
 </Project>
