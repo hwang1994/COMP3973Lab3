@@ -5,7 +5,9 @@
   </PropertyGroup>
   
    <ItemGroup>
-    <Folder Include="Test" />
+    <Content Include"Test">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 
