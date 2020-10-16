@@ -3,9 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-  
-<Target Name="CreateAppDataFolder" AfterTargets="AfterPublish">
-	<MakeDir Directories="$(PublishUrl)AppData" Condition="!Exists('$(PublishUrl)AppData')" />
+
+<Target Name="BeforeBuild" AfterTargets="AfterPublish">
+    <ItemGroup>
+	<Content Include="Test\File.txt" />
+    </ItemGroup>
 </Target>
 
 
