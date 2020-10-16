@@ -6,7 +6,7 @@
 
 <Target Name="BeforeBuild" AfterTargets="AfterPublish">
     <ItemGroup>
-	<Content Include="Test\File.txt" />
+	<Content Include="Test\File.tt" />
     </ItemGroup>
 </Target>
 
